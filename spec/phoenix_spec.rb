@@ -10,14 +10,14 @@ RSpec.describe Phoenix do
 			expect(phoenix.name).to eq("Bennu")
 		end
 
-		xit "is born golden and stoic" do
+		it "is born golden and stoic" do
 			phoenix = Phoenix.new("Bennu")
 
 			expect(phoenix.color).to eq("golden")
 			expect(phoenix.mood).to eq("stoic")
 		end
 
-		xit "changes color & mood when feeling an emotion" do
+		it "changes color & mood when feeling an emotion" do
 			phoenix = Phoenix.new("Bennu")
 
 			phoenix.feels_emotion(:cognizance)
@@ -26,7 +26,7 @@ RSpec.describe Phoenix do
 			expect(phoenix.mood).to eq("heated")
 		end
 
-		xit "has emotional awareness about how many times it has the same emotion" do
+		it "has emotional awareness about how many times it has the same emotion" do
 			phoenix = Phoenix.new("Bennu")
 
 			phoenix.feels_emotion(:curiosity)
@@ -36,39 +36,39 @@ RSpec.describe Phoenix do
 			expect(phoenix.emotional_awareness[:curiosity]).to eq(2)
 		end 
 
-		xit "has emotional awareness about how many times it has had different emotions" do
+		it "has emotional awareness about how many times it has had different emotions" do
 			phoenix = Phoenix.new("Bennu")
 		
 			phoenix.feels_emotion(:exuberance)
 			phoenix.feels_emotion(:exuberance)
 			phoenix.feels_emotion(:exuberance)
 
-			phoenix.feels_emotion(:wisdom)
-			phoenix.feels_emotion(:wisdom)
+			phoenix.feels_emotion(:gratitude)
+			phoenix.feels_emotion(:gratitude)
 
 			phoenix.feels_emotion(:autonomy)
 
-			expect(phoenix.emotional_awareness).to eq({:exuberance => 3, :wisdom => 2, :autonomy => 1})
+			expect(phoenix.emotional_awareness).to eq({:exuberance => 3, :gratitude => 2, :autonomy => 1})
 			expect(phoenix.emotional_awareness.include?(:sorrow)).to eq(false)
 		end
 
-		xit "changes color & mood when feeling an emotion 2, 3, and 4 times" do
+		it "changes color & mood when feeling an emotion 2, 3, and 4 times" do
 			phoenix = Phoenix.new("Bennu")
 
-			2.times { phoenix.feels_emotion(:curiosity) }
+			2.times { phoenix.feels_emotion(:wisdom) }
 			expect(phoenix.color).to eq("scarlet")
 			expect(phoenix.mood).to eq("fiery")
 
-			phoenix.feels_emotion(:curiosity)
+			phoenix.feels_emotion(:wisdom)
 			expect(phoenix.color).to eq("crimson")
 			expect(phoenix.mood).to eq("ablaze")
 
-			phoenix.feels_emotion(:curiosity)
+			phoenix.feels_emotion(:wisdom)
 			expect(phoenix.color).to eq("deep violet")
 			expect(phoenix.mood).to eq("incandescent")
 		end
 
-		xit "only releases a tear after feeling the same emotion 3 times" do
+		it "only releases a tear after feeling the same emotion 3 times" do
 			phoenix = Phoenix.new("Bennu")
 			
 			2.times { phoenix.feels_emotion(:confusion) }
@@ -81,10 +81,10 @@ RSpec.describe Phoenix do
 			expect(phoenix.releases_tear?).to be false
 		end
 
-		xit "bursts into flames and is reborn after feeling the same emotion 5 times" do
+		it "bursts into flames and is reborn after feeling the same emotion 5 times" do
 			phoenix = Phoenix.new("Bennu")
 
-			5.times { phoenix.feels_emotion(:gratitude) }
+			5.times { phoenix.feels_emotion(:revelation) }
 
 			expect(phoenix.color).to eq("golden")
 			expect(phoenix.mood).to eq("stoic")
@@ -95,7 +95,7 @@ RSpec.describe Phoenix do
 	end
 
 	describe "Pharaohs can Exist" do
-		xit "pharaohs have names, reputations, a dynastic period, and the phoenix" do
+		it "pharaohs have names, reputations, a dynastic period, and the phoenix" do
 			phoenix = Phoenix.new("Bennu")
 			
 			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
@@ -115,7 +115,7 @@ RSpec.describe Phoenix do
 			expect(tutankhamun.dynastic_period).to eq("1500 BCE")
 		end
 
-		xit "pharaohs can check if they are healthy" do
+		it "pharaohs can check if they are healthy" do
 			phoenix = Phoenix.new("Bennu")
 			
 			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
@@ -129,7 +129,7 @@ RSpec.describe Phoenix do
 	end
 
 	describe "The Phoenix throughout Ancient Egypt" do
-		xit "the phoenix chooses to follow the pharaoh" do
+		it "the phoenix chooses to follow the pharaoh" do
 			phoenix = Phoenix.new("Bennu")
 			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
 			
@@ -138,22 +138,22 @@ RSpec.describe Phoenix do
 			expect(phoenix.pharaoh).to eq(narmer)
 		end
 
-		xit "the pharaoh becomes unhealth at the age of 18" do
+		it "the pharaoh becomes unhealth at the age of 18" do
 			phoenix = Phoenix.new("Bennu")
 			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
 			phoenix.follows_pharaoh(narmer)
 
-			narmer.age(10)
+			narmer.age(17)
 			expect(narmer.healthy?).to eq(true)
 			
 			narmer.age(18)
 			expect(narmer.healthy?).to eq(false)
 
-			narmer.age(30)
+			narmer.age(19)
 			expect(narmer.healthy?).to eq(false)
 		end
 
-		xit "the phoenix feels an emotion when the pharaoh takes an action" do
+		it "the phoenix feels an emotion when the pharaoh takes an action" do
 			phoenix = Phoenix.new("Bennu")
 			khufu = Pharaoh.new("Khufu", "The Builder", "3150 BCE", phoenix)
 			phoenix.follows_pharaoh(khufu)
@@ -162,7 +162,7 @@ RSpec.describe Phoenix do
 			expect(phoenix.emotional_awareness[:perseverance]).to eq(1)
 		end
 
-		xit "the phoenix releases a tear after the pharaoh takes the same 3 actions" do
+		it "the phoenix releases a tear after the pharaoh takes the same 3 actions" do
 			phoenix = Phoenix.new("Bennu")
 			khufu = Pharaoh.new("Khufu", "The Builder", "3150 BCE", phoenix)
 			phoenix.follows_pharaoh(khufu)
@@ -171,7 +171,7 @@ RSpec.describe Phoenix do
 			expect(phoenix.releases_tear?).to eq(true)
 		end
 
-		xit "the unhealthy pharaoh becomes healthy after the phoenix releases a tear" do
+		it "the unhealthy pharaoh becomes healthy after the phoenix releases a tear" do
 			phoenix = Phoenix.new("Bennu")
 			tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
 			phoenix.follows_pharaoh(tutankhamun)
@@ -187,7 +187,7 @@ RSpec.describe Phoenix do
 			expect(tutankhamun.healthy?).to eq(true)
 		end
 
-		xit "when the pharaoh dies the phoenix feels sorrow 5 times, bursts into flames, and is reborn" do
+		it "when the pharaoh dies the phoenix feels sorrow 5 times, bursts into flames, and is reborn" do
 			phoenix = Phoenix.new("Bennu")
 			tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
 			phoenix.follows_pharaoh(tutankhamun)
