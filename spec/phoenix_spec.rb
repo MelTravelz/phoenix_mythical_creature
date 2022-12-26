@@ -98,12 +98,12 @@ RSpec.describe Phoenix do
 		xit "pharaohs have names, reputations, a dynastic period, and the phoenix" do
 			phoenix = Phoenix.new("Bennu")
 			
-			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
+			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 			khufu = Pharaoh.new("Khufu", "The Builder", "2600 BCE", phoenix)
 			tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
 
 			expect(narmer.name).to eq("Narmer")
-			expect(narmer.reputation).to eq("The Unifer")
+			expect(narmer.reputation).to eq("The Unifier")
 			expect(narmer.dynastic_period).to eq("3100 BCE")
 
 			expect(khufu.name).to eq("Khufu")
@@ -118,7 +118,7 @@ RSpec.describe Phoenix do
 		xit "pharaohs can check if they are healthy" do
 			phoenix = Phoenix.new("Bennu")
 			
-			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
+			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 			khufu = Pharaoh.new("Khufu", "The Builder", "2600 BCE", phoenix)
 			tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
 
@@ -131,7 +131,7 @@ RSpec.describe Phoenix do
 	describe "The Phoenix throughout Ancient Egypt" do
 		xit "the phoenix chooses to follow the pharaoh" do
 			phoenix = Phoenix.new("Bennu")
-			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
+			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 			
 			phoenix.follows_pharaoh(narmer)
 
@@ -140,7 +140,7 @@ RSpec.describe Phoenix do
 
 		xit "the pharaoh becomes unhealth at the age of 18" do
 			phoenix = Phoenix.new("Bennu")
-			narmer = Pharaoh.new("Narmer", "The Unifer", "3100 BCE", phoenix)
+			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 			phoenix.follows_pharaoh(narmer)
 
 			narmer.age(17)
