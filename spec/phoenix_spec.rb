@@ -138,7 +138,7 @@ RSpec.describe Phoenix do
 			expect(phoenix.pharaoh).to eq(narmer)
 		end
 
-		xit "the pharaoh becomes unhealth at the age of 18" do
+		xit "the pharaoh becomes unhealthy at the age of 18" do
 			phoenix = Phoenix.new("Bennu")
 			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 			phoenix.follows_pharaoh(narmer)
