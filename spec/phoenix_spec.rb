@@ -109,8 +109,9 @@ RSpec.describe Phoenix do
 		it "a pharaoh can die" do
 			phoenix = Phoenix.new("Bennu")
 			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
-			phoenix.follows_pharaoh(narmer)
 
+			narmer.age = 60
+			
 			narmer.dies
 			expect(narmer.dead?).to eq(true)
 		end
