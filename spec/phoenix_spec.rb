@@ -175,7 +175,7 @@ RSpec.describe Phoenix do
 			expect(phoenix.color).to eq("deep violet")
 			expect(phoenix.mood).to eq("incandescent")
 			expect(phoenix.pharaoh).to eq(tutankhamun)
-			expect(phoenix.emotional_awareness[:trepidation]).to eq(4)
+			expect(phoenix.emotional_awareness).to eq({:trepidation => 4})
 
 			tutankhamun.dies 			
 			expect(tutankhamun.dead?).to eq(true)
