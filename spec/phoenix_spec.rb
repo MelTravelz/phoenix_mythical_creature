@@ -169,7 +169,8 @@ RSpec.describe Phoenix do
 			phoenix = Phoenix.new("Bennu")
 			tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
 			phoenix.follows_pharaoh(tutankhamun)
-
+			19.times { tutankhamun.ages }
+			
 			4.times { tutankhamun.takes_action(:trepidation) }
 			
 			expect(phoenix.color).to eq("deep violet")
