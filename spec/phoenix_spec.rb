@@ -171,9 +171,11 @@ RSpec.describe Phoenix do
 			phoenix.follows_pharaoh(tutankhamun)
 
 			4.times { tutankhamun.takes_action(:trepidation) }
-			expect(phoenix.emotional_awareness[:trepidation]).to eq(4)
+			
 			expect(phoenix.color).to eq("deep violet")
 			expect(phoenix.mood).to eq("incandescent")
+			expect(phoenix.pharaoh).to eq(tutankhamun)
+			expect(phoenix.emotional_awareness[:trepidation]).to eq(4)
 
 			tutankhamun.dies 			
 			expect(tutankhamun.dead?).to eq(true)
