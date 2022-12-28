@@ -111,6 +111,7 @@ RSpec.describe Phoenix do
 			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 
 			narmer.age = 60
+			expect(narmer.dead?).to eq(false)
 			
 			narmer.dies
 			expect(narmer.dead?).to eq(true)
@@ -131,6 +132,7 @@ RSpec.describe Phoenix do
 			phoenix.follows_pharaoh(khufu)
 
 			khufu.takes_action(:perseverance)
+			
 			expect(phoenix.emotional_awareness[:perseverance]).to eq(1)
 		end
 
@@ -154,7 +156,7 @@ RSpec.describe Phoenix do
 			tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
 			phoenix.follows_pharaoh(tutankhamun)
 			
-			19.times { tutankhamun.ages }
+			18.times { tutankhamun.ages }
 			expect(tutankhamun.healthy?).to eq(false)
 
 			3.times { tutankhamun.takes_action(:compassion) }
@@ -178,9 +180,8 @@ RSpec.describe Phoenix do
 
 			expect(phoenix.color).to eq("golden")
 			expect(phoenix.mood).to eq("stoic")
-			expect(phoenix.emotional_awareness).to eq({})
-			expect(phoenix.releases_tear?).to eq(false)
 			expect(phoenix.pharaoh).to eq(nil)
+			expect(phoenix.emotional_awareness).to eq({})
 		end
 	end
 end
