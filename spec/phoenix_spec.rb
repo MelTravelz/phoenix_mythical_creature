@@ -54,16 +54,27 @@ RSpec.describe Phoenix do
 			expect(phoenix.emotional_awareness.include?(:sorrow)).to eq(false)
 		end 
 
-		it "releases a tear after feeling the same emotion on the 3rd time ONLY" do
+		it "only releases a tear after feeling the same emotion 3 times" do
 			phoenix = Phoenix.new("Bennu")
 			
-			2.times { phoenix.feels_emotion(:confusion) }
+			phoenix.feels_emotion(:confusion)
+			phoenix.feels_emotion(:confusion)
 			expect(phoenix.releases_tear?).to be false
 
+			phoenix.feels_emotion(:autonomy)
+			expect(phoenix.releases_tear?).to be false
+			
 			phoenix.feels_emotion(:confusion)
+			expect(phoenix.releases_tear?).to be true
+			
+			phoenix.feels_emotion(:autonomy)
+			phoenix.feels_emotion(:autonomy)
 			expect(phoenix.releases_tear?).to be true
 
 			phoenix.feels_emotion(:confusion)
+			expect(phoenix.releases_tear?).to be false
+			
+			phoenix.feels_emotion(:autonomy)
 			expect(phoenix.releases_tear?).to be false
 		end
 
@@ -79,6 +90,10 @@ RSpec.describe Phoenix do
 		end
 	end
 
+	# A new class is now being created. 
+	# Best practices state that a new test file and new class file should also be created.
+	# However, in following the pattern of the previous mythical creatures, the tests are included here.
+	
 	describe "The Phoenix throughout Ancient Egypt" do
 		it "a pharaoh has a name, reputation, dynastic period, and the phoenix" do
 			phoenix = Phoenix.new("Bennu")
