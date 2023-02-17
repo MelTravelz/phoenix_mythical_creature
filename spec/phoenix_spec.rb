@@ -110,7 +110,7 @@ RSpec.describe Phoenix do
 			phoenix = Phoenix.new("Bennu")
 			narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 
-			narmer.age = 60
+			60.times { narmer.ages }
 			expect(narmer.dead?).to eq(false)
 			
 			narmer.dies
@@ -141,7 +141,7 @@ RSpec.describe Phoenix do
 			khufu = Pharaoh.new("Khufu", "The Builder", "3150 BCE", phoenix)
 			phoenix.follows_pharaoh(khufu)
 
-			khufu.age = 17
+			17.times { khufu.ages }
 			expect(khufu.healthy?).to eq(true)
 			
 			khufu.ages
