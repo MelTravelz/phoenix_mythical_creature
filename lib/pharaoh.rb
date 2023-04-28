@@ -2,9 +2,9 @@
 
 class Pharaoh
 	attr_reader :name,
-				:reputation,
-				:dynastic_period,
-				:phoenix
+							:reputation,
+							:dynastic_period,
+							:phoenix
 
 	attr_accessor :age, :healthy
 
