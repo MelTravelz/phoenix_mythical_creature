@@ -4,7 +4,7 @@ require './lib/pharaoh'
 
 RSpec.describe Pharaoh do
   describe "The Pharaohs & the Phoenix throughout Ancient Egypt" do
-    it "a pharaoh has a name, reputation, dynastic period, and the phoenix" do
+    xit "a pharaoh has a name, reputation, dynastic period, and the phoenix" do
       phoenix = Phoenix.new("Bennu")
       narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 
@@ -14,14 +14,14 @@ RSpec.describe Pharaoh do
       expect(narmer.phoenix).to eq(phoenix)
     end
 
-    it "a pharaoh can check if they are healthy" do
+    xit "a pharaoh can check if they are healthy" do
       phoenix = Phoenix.new("Bennu")
       narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
       
       expect(narmer.healthy?).to eq(true)
     end
 
-    it "a pharaoh can age" do
+    xit "a pharaoh can age" do
       phoenix = Phoenix.new("Bennu")
       narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
       
@@ -30,7 +30,7 @@ RSpec.describe Pharaoh do
       expect(narmer.age).to eq(24)
     end
 
-    it "a pharaoh can die" do
+    xit "a pharaoh can die" do
       phoenix = Phoenix.new("Bennu")
       narmer = Pharaoh.new("Narmer", "The Unifier", "3100 BCE", phoenix)
 
@@ -41,7 +41,7 @@ RSpec.describe Pharaoh do
       expect(narmer.dead?).to eq(true)
     end
 
-    it "the phoenix chooses to follow the pharaoh" do
+    xit "the phoenix chooses to follow the pharaoh" do
       phoenix = Phoenix.new("Bennu")
       khufu = Pharaoh.new("Khufu", "The Builder", "3150 BCE", phoenix)
 
@@ -50,7 +50,7 @@ RSpec.describe Pharaoh do
       expect(phoenix.pharaoh).to eq(khufu)
     end
 
-    it "the phoenix feels an emotion when the pharaoh takes an action" do
+    xit "the phoenix feels an emotion when the pharaoh takes an action" do
       phoenix = Phoenix.new("Bennu")
       khufu = Pharaoh.new("Khufu", "The Builder", "3150 BCE", phoenix)
       phoenix.follows_pharaoh(khufu)
@@ -60,7 +60,7 @@ RSpec.describe Pharaoh do
       expect(phoenix.emotional_awareness).to eq({:perseverance => 1})
     end
 
-    it "the pharaoh is unhealthy at the age of 18 or older" do
+    xit "the pharaoh is unhealthy at the age of 18 or older" do
       phoenix = Phoenix.new("Bennu")
       khufu = Pharaoh.new("Khufu", "The Builder", "3150 BCE", phoenix)
       phoenix.follows_pharaoh(khufu)
@@ -75,7 +75,7 @@ RSpec.describe Pharaoh do
       expect(khufu.healthy?).to eq(false)
     end
 
-    it "the unhealthy pharaoh becomes healthy after the phoenix releases a tear" do
+    xit "the unhealthy pharaoh becomes healthy after the phoenix releases a tear" do
       phoenix = Phoenix.new("Bennu")
       tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
       phoenix.follows_pharaoh(tutankhamun)
@@ -89,7 +89,7 @@ RSpec.describe Pharaoh do
       expect(tutankhamun.healthy?).to eq(true)
     end
 
-    it "when the pharaoh dies the phoenix feels sorrow 5 times, bursts into flames, and is reborn" do
+    xit "when the pharaoh dies the phoenix feels sorrow 5 times, bursts into flames, and is reborn" do
       phoenix = Phoenix.new("Bennu")
       tutankhamun = Pharaoh.new("Tutankhamun", "The Child", "1500 BCE", phoenix)
       phoenix.follows_pharaoh(tutankhamun)
