@@ -2,7 +2,6 @@ require 'rspec'
 require './lib/phoenix'
 
 RSpec.describe Phoenix do
-
 	describe "The Phoenix was Self-created at the Beginning of Time" do
 		it "exists" do
 			phoenix = Phoenix.new("Bennu")
