@@ -40,7 +40,7 @@ class Phoenix
 					# the above line replaces this: 
           # if @pharaoh != nil
 					# 	pharaoh.healthy = true 
-					# end
+					# end 
 			elsif @emotional_awareness[emotion] == 4
 				@releases_tear = false
 				@color = "deep violet"
