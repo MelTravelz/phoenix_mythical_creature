@@ -1,14 +1,15 @@
 # Phoenix Mythical Creature
 <br>
 <div align="center">
-  <img src="https://user-images.githubusercontent.com/116964982/235269463-5ff17010-7f47-4e5b-b933-1f55ff6ea505.jpg" width="30%">
-<br><br>
+Experience the wonders of Ancient Egypt through an engaging Ruby exercise to practice building hash data-types! 
+<br>
+In this exercise, you will explore the mythology of the legendary Phoenix, Bennu, as he follows each pharaoh throughout multiple kingdoms: Narmer the Unifier, Khufu the Builder, and Tutankhamun the Child. 
 
-Inspired by the [mythical_creatures](https://github.com/turingschool-examples/mod-1-be-exercises/tree/main/ruby_exercises/mythical-creatures) collection of exercises created by the [Turing School of Software & Design](https://turing.edu/).
-<br>
-The aim of these exercises is to practice Ruby and Test-Driven Development (TDD) for incoming Backend students.
-<br>
-This specific exercise focuses on the Ruby hash data-type.
+<br><br>
+  <img src="https://user-images.githubusercontent.com/116964982/235269463-5ff17010-7f47-4e5b-b933-1f55ff6ea505.jpg" width="30%">
+<br><br> 
+
+As you work through this exercise, you will gain a deeper understanding of Ruby programming and Test-Driven Development (TDD) while immersing yourself in the rich culture of one of the world's most intriguing civilizations. Inspired by the [mythical_creatures](https://github.com/turingschool-examples/mod-1-be-exercises/tree/main/ruby_exercises/mythical-creatures) collection of exercises created by the [Turing School of Software & Design](https://turing.edu/), this is a great way to expand your skills and learn about the ancient world!
 </div>
 <br>
 <hr>
