@@ -19,7 +19,7 @@ As you work through this exercise, you will gain a deeper understanding of Ruby 
 
 1. Fork this repo and clone YOUR fork to your local computer. 
     - Click the `Fork` button in Github, then click on `Create Fork`
-    - Then copy the code provided.
+    - Click the `Copy` button & ensure `SSH` is highlighted, then copy the code provided.
     - Move into the directory you want this directory to live: `cd name_of_directory` 
     - Paste the code from GitHub into your Terminal command line, it should look like:
 ```
